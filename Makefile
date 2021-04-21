@@ -22,7 +22,7 @@ obj/%.o : src/%.c
 	$(CC) -c $< -o $@ $(CFLAGS)
 
 clean :
-	rm -rf obj/*.o
+	rm -rf obj
 
 mrproper : clean
 	rm -rf $(EXEC)
