@@ -10,10 +10,10 @@ OBJ = $(addprefix obj/,$(SRC:.c=.o))
 
 .phony : clean mrproper
 
-all : build $(EXEC)
-	@echo "Compilation Réussie"
-build : 
-	@mkdir -p obj
+all : obj/ $(EXEC)
+	
+obj/ : 
+	mkdir -p obj
 
 $(EXEC) : $(OBJ)
 	$(CC) $^ -o $@ 
