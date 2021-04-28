@@ -10,18 +10,10 @@ int main(int argc, char** argv){
 	scanf("%d",&x);
 	scanf("%d",&y);
 	
-	tab = malloc(x * sizeof(int*));
-	for(int i =0;i<x;i++){
-		tab[i] = malloc(y * sizeof(int));
-	}
+	tab = alloc(x,y);    //allocation du tableau
+	
+	init(tab,x,y);       // initialisation tableau
 
-	
-	for(int i=0;i<x;i++){
-		for(int j=0;j<x;j++){
-			scanf("%d",&tab[i][j]);
-		}
-	}
-	
 	
 	
 	for(int i=0;i<x;i++){
