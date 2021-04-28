@@ -5,6 +5,7 @@ CFLAGS = -Wall -Wextra
 #LDFlags =
 
 SRC = main.c \
+	fonctions.c \
 
 OBJ = $(addprefix obj/,$(SRC:.c=.o))	
 
