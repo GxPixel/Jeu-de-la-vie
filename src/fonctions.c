@@ -39,7 +39,7 @@ void afficher(int** tab, int lignes, int colones){
 					printf("   ");
 				}
 			}
-			printf("\n");
+			printf("|\n");
 		}
 		printf("+");
 			
