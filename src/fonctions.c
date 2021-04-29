@@ -27,6 +27,7 @@ void afficher(int** tab, int lignes, int colones){
 			for(int x=0; x<colones; x++){
 				printf("---+");
 			}
+		    printf("\n");
 			
 			for(int j=0; j<colones; j++){
 				
