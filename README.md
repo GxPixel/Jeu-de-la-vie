@@ -12,4 +12,4 @@ Après avoir utilisé le programme (pour qu'il prenne moins de place ) :
 
     - make mrproper                             # pour netoyer
 
-    si on veut le réutiliser le programme après cette etape il faut recompiler ( cf Liste des commandes à faire )
+Si on veut le réutiliser le programme après cette etape il faut recompiler ( cf Liste des commandes à faire )
