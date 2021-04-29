@@ -19,3 +19,31 @@ void init(int** tab, int lignes, int colones){
 		}
 	}
 }
+
+void afficher(int** tab, int lignes, int colones){
+	    for(int i=0; i<lignes; i++){
+			printf("+");
+			
+			for(int x=0; x<colones; x++){
+				printf("---+");
+			}
+			
+			for(int j=0; j<colones; j++){
+				
+				printf("|");
+				if (tab[i][j] == 1){
+					printf(" O ");
+				}
+				else{
+					printf("   ");
+				}
+			}
+			printf("\n");
+		}
+		printf("+");
+			
+			for(int x=0; x<colones; x++){
+				printf("---+");
+			}					
+    }
+}
