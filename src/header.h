@@ -15,4 +15,11 @@ int** alloc(int lignes, int colones);
  */
 void init(int** tab, int lignes, int colones);
 
+/*  Nom : Hennuy Baptiste
+	Date : 29/04/2021 14:26
+	
+	Affiche la grille
+*/
+void afficher(int** tab, int lignes, int colones);
+
 #endif
