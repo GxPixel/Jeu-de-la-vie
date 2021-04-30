@@ -20,32 +20,26 @@ void init(int** tab, int lignes, int colones){
 	}
 }
 
-void afficher(int** tab, int lignes, int colones)
-{
+void afficher(int** tab, int lignes, int colones){
 
-	    for(int i=0; i<lignes; i++)
-	    {
+	    for(int i=0; i<lignes; i++){
 			printf("+");
 			
-			for(int x=0; x<colones; x++)
-			{
+			for(int x=0; x<colones; x++){
 				printf("---+");
 			}
 
 		    printf("\n");
 			
-			for(int j=0; j<colones; j++)
-			{
+			for(int j=0; j<colones; j++){
 				
 				printf("|");
 
-				if (tab[i][j] == 1)
-				{
+				if (tab[i][j] == 1){
 					printf(" O ");
 				}
 				
-				else
-				{
+				else{
 					printf("   ");
 				}
 			}
@@ -55,11 +49,22 @@ void afficher(int** tab, int lignes, int colones)
 
 		printf("+");
 			
-		for(int x=0; x<colones; x++)
-		{
+		for(int x=0; x<colones; x++){
 			printf("---+");
 		}
 
 	printf("\n");
 }
 
+int verifCasesAdjacentes(int** tab, int x, int y, int torique){
+	int nbCasesAdjPleines = 0;
+	if (torique){
+
+	}
+
+	else{
+		nbCasesAdjPleines = tab[x-1][y+1] + tab[x][y+1] + tab[x+1][y+1] + tab[x-1][y] + tab[x+1][y] + tab[x-1][y-1] + tab[x][y-1] + tab[x+1][y-1];
+	}
+
+	return nbCasesAdjPleines;
+}
