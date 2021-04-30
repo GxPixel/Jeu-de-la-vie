@@ -22,4 +22,13 @@ void init(int** tab, int lignes, int colones);
 */
 void afficher(int** tab, int lignes, int colones);
 
+/*	Nom : Hennuy Baptiste
+ *	Date : 30/04/2021	17:30 
+ *
+ *	Vérifie les cases adjacentes d'une certaine case et retourne le nombre de cases pleines adjacentes
+ *	Paramètres d'entrée: tableau de pointeurs, x de la case à vérifier, y de la case à vérifier, grille torique (0 = non torique, 1 = torique)
+ */
+int verifCasesAdjacentes(int** tab, int x, int y, int torique);
+
+
 #endif
