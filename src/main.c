@@ -3,28 +3,25 @@
 #include <stdlib.h>
 
 int main(int argc, char** argv){
-	int x;
-	int y;
+	int nbligne;
+	int nbcolone;
 	int** tab;
 	
-	scanf("%d",&x);
-	scanf("%d",&y);
+	scanf("%d",&nbligne);
+	scanf("%d",&nbcolone);
 	
-	tab = alloc(x,y);    //allocation du tableau
+	tab = alloc(nbligne,nbcolone);    //allocation du tableau
 	
-	init(tab,x,y);       // initialisation tableau
+	init(tab,nbligne,nbcolone);       // initialisation tableau
 
 	
 	
-	afficher(tab,x,y);
+	afficher(tab,nbligne,nbcolone);
 
 	printf("%d\n",verifCasesAdjacentes(tab,1,1,0));		//Test de la fonction verifCasesAdjacantes
 	
 	
-	for(int i =0;i<x;i++){
-		free(tab[i]);
-	}
-	free(tab);
+	liberer(tab,nbligne);
 	
 	return 0;
 }

@@ -5,6 +5,7 @@
  * Date : 28/04/2021 12:22
  * 
  * Allocation du tableau
+ * Prends le nombres de ligne et de colone
  */
 int** alloc(int lignes, int colones);
 
@@ -15,11 +16,19 @@ int** alloc(int lignes, int colones);
  */
 void init(int** tab, int lignes, int colones);
 
+/* Nom : Faucher Noé
+ * Date : 01/05/2021 18:44
+ * 
+ * Libere l'espace alloué au tableau
+ * Prends le tableau, le nombres de ligne et de colone
+ */
+void liberer(int** tab, int lignes);
+
 /*  Nom : Hennuy Baptiste
-	Date : 29/04/2021 14:26
-	
-	Affiche la grille
-*/
+ *	Date : 29/04/2021 14:26
+ *	
+ *	Affiche la grille
+ */
 void afficher(int** tab, int lignes, int colones);
 
 /*	Nom : Hennuy Baptiste
