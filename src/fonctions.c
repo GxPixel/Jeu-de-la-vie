@@ -21,6 +21,13 @@ void init(int** tab, int lignes, int colones){
 	}
 }
 
+void liberer(int** tab, int lignes){
+	for(int i =0;i<lignes;i++){
+			free(tab[i]);
+		}
+	free(tab);	
+}
+
 void afficher(int** tab, int lignes, int colones){
 	    for(int i=0; i<lignes; i++){
 			printf("+");			
@@ -58,3 +65,4 @@ int verifCasesAdjacentes(int** tab, int x, int y, int torique){
 
 	return nbCasesAdjPleines;
 }
+
