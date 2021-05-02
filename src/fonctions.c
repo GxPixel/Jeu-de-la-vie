@@ -66,3 +66,19 @@ int verifCasesAdjacentes(int** tab, int x, int y, int torique){
 	return nbCasesAdjPleines;
 }
 
+int nouvellevaleur(int nb_voisin,int valeur_case){
+	if(valeur_case == 0){                       // Si la case est vide au départ
+		if(nb_voisin == 3){							// Si elle a 3 voisins
+			return 1;									// On creé un nouvelle cellule
+		}else{										// Sinon
+			return 0;									// La case reste vide
+		}
+	}else{										// Si il y a deja un cellule
+		if(nb_voisin == 3 || nb_voisin == 2){		// Si il y a 2 ou 3 voisins
+			return 1;									// La cellule reste en vie
+		}else{									//Sinon
+			return 0;								// La cellule meurt
+		}
+	}
+}
+
