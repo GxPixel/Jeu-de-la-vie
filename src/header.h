@@ -39,7 +39,7 @@ void afficher(int** tab, int lignes, int colones);
  */
 int verifCasesAdjacentes(int** tab, int x, int y, int torique);
 
-/* Nom : Faucher Noé
+/* Nom : 
  * Date : 02/05/2021 21:45
  * 
  * Retourne nouvelle valeur de la case, 
@@ -47,7 +47,7 @@ int verifCasesAdjacentes(int** tab, int x, int y, int torique);
  */
 int nouvellevaleur(int nb_voisin,int valeur_case);
 
-/* Nom : 
+/* Nom : Faucher Noé
  * Date : 03/05/2021 09:52
  * 
  *  Retourne le tableau après une iteration de jeu
