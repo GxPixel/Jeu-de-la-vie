@@ -2,40 +2,40 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int** alloc(int nb_ligne, int nb_colone){
+int** alloc(int lignes, int colones){
 	int** tab;
 	
-	tab = malloc(nb_ligne * sizeof(int*));
-	for(int i =0;i<nb_ligne;i++){
-		tab[i] = malloc(nb_colone * sizeof(int));
+	tab = malloc(lignes * sizeof(int*));
+	for(int i =0;i<lignes;i++){
+		tab[i] = malloc(colones * sizeof(int));
 	}
 	
 	return tab;
 }
 
-void init(int** tab, int nb_ligne, int nb_colone){
-	for(int i=0;i<nb_ligne;i++){
-		for(int j=0;j<nb_colone;j++){
+void init(int** tab, int lignes, int colones){
+	for(int i=0;i<lignes;i++){
+		for(int j=0;j<colones;j++){
 			scanf("%d",&tab[i][j]);
 		}
 	}
 }
 
-void liberer(int** tab, int nb_ligne){
-	for(int i =0;i<nb_ligne;i++){
+void liberer(int** tab, int lignes){
+	for(int i =0;i<lignes;i++){
 			free(tab[i]);
 		}
 	free(tab);	
 }
 
-void afficher(int** tab, int nb_ligne, int nb_colone){
-	    for(int i=0; i<nb_ligne; i++){
+void afficher(int** tab, int lignes, int colones){
+	    for(int i=0; i<lignes; i++){
 			printf("+");			
-			for(int colone=0; colone<nb_colone; colone++){
+			for(int x=0; x<colones; x++){
 				printf("---+");
 			}
 		    	printf("\n");			
-			for(int j=0; j<nb_colone; j++){				
+			for(int j=0; j<colones; j++){				
 				printf("|");
 				if (tab[i][j] == 1){
 					printf(" 0 ");
@@ -47,36 +47,36 @@ void afficher(int** tab, int nb_ligne, int nb_colone){
 			printf("|\n");
 		}
 		printf("+");			
-		for(int colone=0; colone<nb_colone; colone++){
+		for(int x=0; x<colones; x++){
 			printf("---+");
 		}
 		printf("\n");
 }
 
-int verifCasesAdjacentes(int** tab, int nb_ligne, int nb_colone, int colone, int ligne, int torique){
+int verifCasesAdjacentes(int** tab, int lignes, int colones, int x, int y, int torique){
 	int nbCasesAdjPleines = 0;
 	if (torique){
 
 	}
 	
 	else{
-		if (colone == 0) nbCasesAdjPleines =tab[colone][ligne-1] + tab[colone+1][ligne-1]+ tab[colone+1][ligne] + tab[colone][ligne+1] + tab[colone+1][ligne+1];																		//verif si la case est sur la ligne du haut
+		if (x == 0) nbCasesAdjPleines =tab[x][y-1] + tab[x+1][y-1]+ tab[x+1][y] + tab[x][y+1] + tab[x+1][y+1];																		//verif si la case est sur la ligne du haut
 		else{
-			if (colone == nb_ligne-1) nbCasesAdjPleines = tab[colone-1][ligne-1] + tab[colone][ligne-1] + tab[colone-1][ligne]+ tab[colone-1][ligne+1] + tab[colone][ligne+1];															//verif si la case est sur la ligne du bas
+			if (x == lignes-1) nbCasesAdjPleines = tab[x-1][y-1] + tab[x][y-1] + tab[x-1][y]+ tab[x-1][y+1] + tab[x][y+1];															//verif si la case est sur la ligne du bas
 			else{
-				if (ligne == 0) nbCasesAdjPleines =tab[colone-1][ligne] + tab[colone+1][ligne] + tab[colone-1][ligne+1] + tab[colone][ligne+1] + tab[colone+1][ligne+1];																//verif si la case est sur la colone de gauche
+				if (y == 0) nbCasesAdjPleines =tab[x-1][y] + tab[x+1][y] + tab[x-1][y+1] + tab[x][y+1] + tab[x+1][y+1];																//verif si la case est sur la colone de gauche
 				else{
-					if (ligne == nb_colone-1) nbCasesAdjPleines = tab[colone-1][ligne-1] + tab[colone][ligne-1] + tab[colone+1][ligne-1] + tab[colone-1][ligne] + tab[colone+1][ligne];												//verif si la case est sur la colone de droite
+					if (y == colones-1) nbCasesAdjPleines = tab[x-1][y-1] + tab[x][y-1] + tab[x+1][y-1] + tab[x-1][y] + tab[x+1][y];												//verif si la case est sur la colone de droite
 					else{
-						if (colone == 0 && ligne == 0) nbCasesAdjPleines = tab [colone+1][ligne] + tab[colone][ligne+1] + tab[colone+1][ligne+1];																		//verif si on est en haut à gauche
+						if (x == 0 && y == 0) nbCasesAdjPleines = tab [x+1][y] + tab[x][y+1] + tab[x+1][y+1];																		//verif si on est en haut à gauche
 						else{
-							if (colone == nb_ligne-1 && ligne == 0) nbCasesAdjPleines = tab [colone-1][ligne] + tab[colone][ligne+1] + tab[colone-1][ligne+1];															//verif si on est en bas à gauche
+							if (x == lignes-1 && y == 0) nbCasesAdjPleines = tab [x-1][y] + tab[x][y+1] + tab[x-1][y+1];															//verif si on est en bas à gauche
 							else{
-								if (colone == 0 && ligne == nb_colone-1) nbCasesAdjPleines = tab [colone][ligne-1] + tab[colone+1][ligne-1] + tab[colone+1][ligne];														//verif si on est en haut à droite
+								if (x == 0 && y == colones-1) nbCasesAdjPleines = tab [x][y-1] + tab[x+1][y-1] + tab[x+1][y];														//verif si on est en haut à droite
 								else{
-									if (colone == nb_ligne-1 && ligne == nb_colone-1) nbCasesAdjPleines = tab [colone-1][ligne-1] + tab[colone][ligne-1] + tab[colone-1][ligne];											//verif si on est en bas à droite
+									if (x == lignes-1 && y == colones-1) nbCasesAdjPleines = tab [x-1][y-1] + tab[x][y-1] + tab[x-1][y];											//verif si on est en bas à droite
 									else{
-										nbCasesAdjPleines = tab[colone-1][ligne-1] + tab[colone][ligne-1] + tab[colone+1][ligne-1] + tab[colone-1][ligne] + tab[colone+1][ligne] + tab[colone-1][ligne+1] + tab[colone][ligne+1] + tab[colone+1][ligne+1];	//verif pour tout le reste
+										nbCasesAdjPleines = tab[x-1][y-1] + tab[x][y-1] + tab[x+1][y-1] + tab[x-1][y] + tab[x+1][y] + tab[x-1][y+1] + tab[x][y+1] + tab[x+1][y+1];	//verif pour tout le reste
 									}
 								}
 							}
@@ -98,8 +98,8 @@ int nouvellevaleur(int nb_voisin,int valeur_case){
 		}else{										// Sinon
 			return 0;									// La case reste vide
 		}
-	}else{										// Si il ligne a deja un cellule
-		if(nb_voisin == 3 || nb_voisin == 2){		// Si il ligne a 2 ou 3 voisins
+	}else{										// Si il y a deja un cellule
+		if(nb_voisin == 3 || nb_voisin == 2){		// Si il y a 2 ou 3 voisins
 			return 1;									// La cellule reste en vie
 		}else{									//Sinon
 			return 0;								// La cellule meurt
@@ -107,14 +107,14 @@ int nouvellevaleur(int nb_voisin,int valeur_case){
 	}
 }
 
-void tour(int** tab,int nb_ligne,int nb_colone,int torique){
+void tour(int** tab,int lignes,int colones,int torique){
 	int** t_temp;
-	t_temp = alloc(nb_ligne,nb_colone);   //allocation du tableau temporaire
+	t_temp = alloc(lignes,colones);   //allocation du tableau temporaire
 
 	// initialisation des valeur du tableau temporaire
-	for(int i=0;i<nb_ligne;i++){
-		for(int j=0;j<nb_colone;j++){
-			int nb_voisin = verifCasesAdjacentes(tab,nb_ligne,nb_colone,i,j,torique);
+	for(int i=0;i<lignes;i++){
+		for(int j=0;j<colones;j++){
+			int nb_voisin = verifCasesAdjacentes(tab,lignes,colones,i,j,torique);
 			int valeur_case = tab[i][j];
 			t_temp[i][j]= nouvellevaleur(nb_voisin,valeur_case);
 		}
@@ -122,5 +122,5 @@ void tour(int** tab,int nb_ligne,int nb_colone,int torique){
 
 	tab = t_temp;   // le tableau prend ses nouvelles valeurs
 
-	liberer(t_temp,nb_ligne);   // liberation tableau temporaire
+	liberer(t_temp,lignes);   // liberation tableau temporaire
 }
