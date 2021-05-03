@@ -3,25 +3,30 @@
 #include <stdlib.h>
 
 int main(int argc, char** argv){
-	int nbligne;
-	int nbcolone;
+	int nb_ligne;
+	int nb_colone;
+	int nb_iteration;
+	int torique;
 	int** tab;
 	
-	scanf("%d",&nbligne);
-	scanf("%d",&nbcolone);
+	scanf("%d",&nb_ligne);
+	scanf("%d",&nb_colone);
 	
-	tab = alloc(nbligne,nbcolone);    //allocation du tableau
+	tab = alloc(nb_ligne,nb_colone);    //allocation du tableau
 	
-	init(tab,nbligne,nbcolone);       // initialisation tableau
+	init(tab,nb_ligne,nb_colone);       // initialisation tableau
 
+	scanf("%d",&nb_iteration);
+	scanf("%d",&torique);
 	
-	
-	afficher(tab,nbligne,nbcolone);
 
-	printf("%d\n",verifCasesAdjacentes(tab,1,1,0));		//Test de la fonction verifCasesAdjacantes
+	afficher(tab,nb_ligne,nb_colone);
+
+
+	printf("%d\n",verifCasesAdjacentes(tab,1,1,torique));		//Test de la fonction verifCasesAdjacantes
 	
 	
-	liberer(tab,nbligne);
+	liberer(tab,nb_ligne);   // liberation memoire du tableau
 	
 	return 0;
 }

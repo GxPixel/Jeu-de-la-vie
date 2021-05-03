@@ -82,3 +82,20 @@ int nouvellevaleur(int nb_voisin,int valeur_case){
 	}
 }
 
+int tour(int** tab,int lignes,int colones,int torique){
+	int** t_temp;
+	t_temp = alloc(lignes,colones);   //allocation du tableau temporaire
+
+	// initialisation des valeur du tableau temporaire
+	for(int i=0;i<lignes;i++){
+		for(int j=0;j<colones;j++){
+			int nb_voisin = verifCasesAdjacentes(tab,i,j,torique);
+			int valeur_case = tab[i][j];
+			t_temp[i][j]= nouvellevaleur(nb_voisin,valeur_case);
+		}
+	}
+
+	tab = t_temp;   // le tableau prend ses nouvelles valeurs
+
+	liberer(t_temp,linges);   // liberation tableau temporaire
+}

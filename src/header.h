@@ -47,4 +47,12 @@ int verifCasesAdjacentes(int** tab, int x, int y, int torique);
  */
 int nouvellevaleur(int nb_voisin,int valeur_case);
 
+/* Nom : 
+ * Date : 03/05/2021 09:52
+ * 
+ *  Retourne le tableau après une iteration de jeu
+ *  prend le tableau,son nombre de ligne et de colone , si il est torique ou non 
+ *  (torique = 1 ; non torique =0)
+ */
+int tour(int** tab,int lignes,int colones,int torique);
 #endif
