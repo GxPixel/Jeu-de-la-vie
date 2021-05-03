@@ -54,5 +54,5 @@ int nouvellevaleur(int nb_voisin,int valeur_case);
  *  prend le tableau,son nombre de ligne et de colone , si il est torique ou non 
  *  (torique = 1 ; non torique =0)
  */
-voi tour(int** tab,int lignes,int colones,int torique);
+void tour(int** tab,int lignes,int colones,int torique);
 #endif
