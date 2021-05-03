@@ -38,7 +38,7 @@ void afficher(int** tab, int lignes, int colones){
 			for(int j=0; j<colones; j++){				
 				printf("|");
 				if (tab[i][j] == 1){
-					printf("\033[07m   \033[m\033[E");
+					printf("\033[07m   \033[m[E");
 				}				
 				else{
 					printf("   ");
