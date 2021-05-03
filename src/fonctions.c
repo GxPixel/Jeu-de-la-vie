@@ -53,18 +53,43 @@ void afficher(int** tab, int lignes, int colones){
 		printf("\n");
 }
 
-int verifCasesAdjacentes(int** tab, int x, int y, int torique){
+int verifCasesAdjacentes(int** tab, int lignes, int colones, int x, int y, int torique){
 	int nbCasesAdjPleines = 0;
 	if (torique){
 
 	}
 	
 	else{
-		nbCasesAdjPleines = tab[x-1][y+1] + tab[x][y+1] + tab[x+1][y+1] + tab[x-1][y] + tab[x+1][y] + tab[x-1][y-1] + tab[x][y-1] + tab[x+1][y-1];
+		if (x == 0) nbCasesAdjPleines =tab[x][y-1] + tab[x+1][y-1]+ tab[x+1][y] + tab[x][y+1] + tab[x+1][y+1];																		//verif si la case est sur la ligne du haut
+		else{
+			if (x == lignes-1) nbCasesAdjPleines = tab[x-1][y-1] + tab[x][y-1] + tab[x-1][y]+ tab[x-1][y+1] + tab[x][y+1];															//verif si la case est sur la ligne du bas
+			else{
+				if (y == 0) nbCasesAdjPleines =tab[x-1][y] + tab[x+1][y] + tab[x-1][y+1] + tab[x][y+1] + tab[x+1][y+1];																//verif si la case est sur la colone de gauche
+				else{
+					if (y == colones-1) nbCasesAdjPleines = tab[x-1][y-1] + tab[x][y-1] + tab[x+1][y-1] + tab[x-1][y] + tab[x+1][y];												//verif si la case est sur la colone de droite
+					else{
+						if (x == 0 && y == 0) nbCasesAdjPleines = tab [x+1][y] + tab[x][y+1] + tab[x+1][y+1];																		//verif si on est en haut à gauche
+						else{
+							if (x == lignes-1 && y == 0) nbCasesAdjPleines = tab [x-1][y] + tab[x][y+1] + tab[x-1][y+1];															//verif si on est en bas à gauche
+							else{
+								if (x == 0 && y == colones-1) nbCasesAdjPleines = tab [x][y-1] + tab[x+1][y-1] + tab[x+1][y];														//verif si on est en haut à droite
+								else{
+									if (x == lignes-1 && y == colones-1) nbCasesAdjPleines = tab [x-1][y-1] + tab[x][y-1] + tab[x-1][y];											//verif si on est en bas à droite
+									else{
+										nbCasesAdjPleines = tab[x-1][y-1] + tab[x][y-1] + tab[x+1][y-1] + tab[x-1][y] + tab[x+1][y] + tab[x-1][y+1] + tab[x][y+1] + tab[x+1][y+1];	//verif pour tout le reste
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 
 	return nbCasesAdjPleines;
 }
+
 
 int nouvellevaleur(int nb_voisin,int valeur_case){
 	if(valeur_case == 0){                       // Si la case est vide au départ
@@ -89,7 +114,7 @@ void tour(int** tab,int lignes,int colones,int torique){
 	// initialisation des valeur du tableau temporaire
 	for(int i=0;i<lignes;i++){
 		for(int j=0;j<colones;j++){
-			int nb_voisin = verifCasesAdjacentes(tab,i,j,torique);
+			int nb_voisin = verifCasesAdjacentes(tab,lignes,colones,i,j,torique);
 			int valeur_case = tab[i][j];
 			t_temp[i][j]= nouvellevaleur(nb_voisin,valeur_case);
 		}
