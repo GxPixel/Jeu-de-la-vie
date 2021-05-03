@@ -82,7 +82,7 @@ int nouvellevaleur(int nb_voisin,int valeur_case){
 	}
 }
 
-int tour(int** tab,int lignes,int colones,int torique){
+void tour(int** tab,int lignes,int colones,int torique){
 	int** t_temp;
 	t_temp = alloc(lignes,colones);   //allocation du tableau temporaire
 
