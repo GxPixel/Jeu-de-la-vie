@@ -35,9 +35,9 @@ void afficher(int** tab, int nb_ligne, int nb_colone);
  *	Date : 30/04/2021	17:30 
  *
  *	Vérifie les cases adjacentes d'une certaine case et retourne le nombre de cases pleines adjacentes
- *	Paramètres d'entrée: tableau de pointeurs, colone de la case à vérifier, ligne de la case à vérifier, grille torique (0 = non torique, 1 = torique)
+ *	Paramètres d'entrée: tableau de pointeurs,nombre de ligne ,nombre de colone , ligne de la case à vérifier, colone de la case à vérifier, grille torique (0 = non torique, 1 = torique)
  */
-int verifCasesAdjacentes(int** tab, int nb_ligne, int nb_colone, int colone, int ligne, int torique);
+int verifCasesAdjacentes(int** tab, int nb_ligne, int nb_colone, int ligne, int colone, int torique);
 
 
 /* Nom : 
