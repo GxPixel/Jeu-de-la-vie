@@ -23,7 +23,8 @@ int main(int argc, char** argv){
 	afficher(tab,nb_ligne,nb_colone);
 
 
-	printf("%d\n",verifCasesAdjacentes(tab,1,1,torique));		//Test de la fonction verifCasesAdjacantes
+	printf("%d\n",verifCasesAdjacentes(tab,nb_ligne, nb_colone,0,2,torique));		//Test de la fonction verifCasesAdjacantes
+	
 	
 	
 	liberer(tab,nb_ligne);   // liberation memoire du tableau
