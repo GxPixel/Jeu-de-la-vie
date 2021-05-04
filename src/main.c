@@ -23,7 +23,7 @@ int main(int argc, char** argv){
 	afficher(tab,nb_ligne,nb_colone);
 
 
-	printf("%d\n",verifCasesAdjacentes(tab,nb_ligne, nb_colone,3,3,1));		//Test de la fonction verifCasesAdjacantes
+	printf("%d\n",verifCasesAdjacentes(tab,nb_ligne, nb_colone,3,3,torique));		//Test de la fonction verifCasesAdjacantes
 	
 	
 	
