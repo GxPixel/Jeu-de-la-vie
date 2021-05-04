@@ -22,7 +22,7 @@ int main(int argc, char** argv){
 	for(int i =1;i<=nb_iteration;i++){
 		system("clear");
 		afficher(tab,nb_ligne,nb_colone);
-		printf("Nombre d'iteration : %d\n",i);
+		printf("Nombre d'itérations : %d\n",i);
 		usleep(1000000);
 		tour(&tab,nb_ligne,nb_colone,torique);
 
