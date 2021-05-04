@@ -24,6 +24,7 @@ int main(int argc, char** argv){
 		afficher(tab,nb_ligne,nb_colone);
 		usleep(1000000);
 		tour(&tab,nb_ligne,nb_colone,torique);
+		printf("Nombre d'iteration : %d",i);
 	}
 	
 
