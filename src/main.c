@@ -23,7 +23,7 @@ int main(int argc, char** argv){
 		system("clear");
 		afficher(tab,nb_ligne,nb_colone);
 		usleep(1000000);
-		tour(tab,nb_ligne,nb_colone,torique);
+		tour(&tab,nb_ligne,nb_colone,torique);
 	}
 	
 

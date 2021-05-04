@@ -52,8 +52,8 @@ int nouvellevaleur(int nb_voisin,int valeur_case);
  * Date : 03/05/2021 09:52
  * 
  *  modifie le tableau après une iteration de jeu
- *  prend le tableau,son nombre de ligne et de colone , si il est torique ou non 
+ *  prend le pointeur du tableau,son nombre de ligne et de colone , si il est torique ou non 
  *  (torique = 1 ; non torique =0)
  */
-void tour(int** tab,int nb_ligne,int nb_colone,int torique);
+void tour(int*** p_tab,int nb_ligne,int nb_colone,int torique);
 #endif
