@@ -19,11 +19,16 @@ int main(int argc, char** argv){
 	scanf("%d",&nb_iteration);
 	scanf("%d",&torique);
 	
+	for(int i =0;i<nb_iteration;i++){
+		system("clear");
+		afficher(tab,nb_ligne,nb_colone);
+		usleep(1000000);
+		tour(tab,nb_ligne,nb_colone,torique);
+	}
+	
 
-	afficher(tab,nb_ligne,nb_colone);
 
-
-	printf("%d\n",verifCasesAdjacentes(tab,nb_ligne, nb_colone,3,3,torique));		//Test de la fonction verifCasesAdjacantes
+	//printf("%d\n",verifCasesAdjacentes(tab,nb_ligne, nb_colone,3,3,torique));		//Test de la fonction verifCasesAdjacantes
 	
 	
 	
