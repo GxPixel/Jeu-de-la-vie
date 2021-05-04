@@ -19,7 +19,7 @@ int main(int argc, char** argv){
 	scanf("%d",&nb_iteration);
 	scanf("%d",&torique);
 	
-	for(int i =0;i<nb_iteration;i++){
+	for(int i =1;i<=nb_iteration;i++){
 		system("clear");
 		afficher(tab,nb_ligne,nb_colone);
 		printf("Nombre d'iteration : %d\n",i);
