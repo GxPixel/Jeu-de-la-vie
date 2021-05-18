@@ -9,31 +9,26 @@ int main(int argc, char** argv){
 	int torique;
 	int** tab;
 	
-	scanf("%d",&nb_ligne);
-	scanf("%d",&nb_colone);
+	scanf("%d",&nb_ligne);				// scan du nombre de ligne
+	scanf("%d",&nb_colone);				// scan du nombre de colone
 	
 	tab = alloc(nb_ligne,nb_colone);    //allocation du tableau
 	
 	init(tab,nb_ligne,nb_colone);       // initialisation tableau
 
-	scanf("%d",&nb_iteration);
-	scanf("%d",&torique);
+	scanf("%d",&nb_iteration);          // scan du nombre d'iteration
+	scanf("%d",&torique);               // scan de si c'est torique ou non
 	
-	for(int i =1;i<=nb_iteration;i++){
+	for(int i =1;i<=nb_iteration;i++){       		// Boucle for qui tourne <nb_iteration> fois
 		system("clear");
-		afficher(tab,nb_ligne,nb_colone);
-		printf("Nombre d'itérations : %d\n",i);
-		usleep(1000000);
-		tour(&tab,nb_ligne,nb_colone,torique);
+		afficher(tab,nb_ligne,nb_colone);			
+		printf("Nombre d'itérations : %d\n",i);     // affiche le nombre d'itération actuel
+		usleep(100000);
+		tour(&tab,nb_ligne,nb_colone,torique);		// appel de la fonction tour qui modifie le tableau 1 fois
 
 	}
 	
 
-
-	//printf("%d\n",verifCasesAdjacentes(tab,nb_ligne, nb_colone,3,3,torique));		//Test de la fonction verifCasesAdjacantes
-	
-	
-	
 	liberer(tab,nb_ligne);   // liberation memoire du tableau
 	
 	return 0;

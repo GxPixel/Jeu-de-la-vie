@@ -39,7 +39,6 @@ void afficher(int** tab, int nb_ligne, int nb_colone);
  */
 int verifCasesAdjacentes(int** tab, int nb_ligne, int nb_colone, int ligne, int colone, int torique);
 
-
 /* Nom : FURGER Achille
  * Date : 02/05/2021 21:45
  * 
@@ -56,4 +55,5 @@ int nouvellevaleur(int nb_voisin,int valeur_case);
  *  (torique = 1 ; non torique =0)
  */
 void tour(int*** p_tab,int nb_ligne,int nb_colone,int torique);
+
 #endif

@@ -56,23 +56,23 @@ void afficher(int** tab, int nb_ligne, int nb_colone){
 int verifCasesAdjacentes(int** tab, int nb_ligne, int nb_colone, int ligne, int colone, int torique){
 	int nbCasesAdjPleines = 0;
 	if (torique){
-		if (ligne == 0 && colone == 0) nbCasesAdjPleines = tab[0][0] + tab[0][1] +	tab[1][0] +	tab[1][1] +	tab[0][nb_colone-1] + tab[1][nb_colone-1] +	tab[nb_ligne-1][0] + tab[nb_ligne-1][1] + tab[nb_ligne-1][nb_colone-1];		
+		if (ligne == 0 && colone == 0) nbCasesAdjPleines = tab[0][0] + tab[0][1] +	tab[1][0] +	tab[1][1] +	tab[0][nb_colone-1] + tab[1][nb_colone-1] +	tab[nb_ligne-1][0] + tab[nb_ligne-1][1] + tab[nb_ligne-1][nb_colone-1];																		//verif si on est en haut à gauche
 		else{
-			if (ligne == nb_ligne-1 && colone == 0)	nbCasesAdjPleines = tab[nb_ligne-1][1] + tab[nb_ligne-2][0] + tab[nb_ligne-2][1] + tab[nb_ligne-1][nb_colone-1] + tab[nb_ligne-2][nb_colone-1] + tab[0][0] + tab[0][1] + tab[0][nb_colone-1];											
+			if (ligne == nb_ligne-1 && colone == 0)	nbCasesAdjPleines = tab[nb_ligne-1][1] + tab[nb_ligne-2][0] + tab[nb_ligne-2][1] + tab[nb_ligne-1][nb_colone-1] + tab[nb_ligne-2][nb_colone-1] + tab[0][0] + tab[0][1] + tab[0][nb_colone-1];													//verif si on est en bas à gauche
 			else{
-				if (ligne == 0 && colone == nb_colone-1) nbCasesAdjPleines = tab[0][nb_colone-2] + tab[1][nb_colone-2] + tab[1][nb_colone-1] + tab[nb_ligne-1][nb_colone-1] + tab[nb_ligne-1][nb_colone-2] + tab[0][0] + tab[1][0] + tab[nb_ligne-1][0];													
+				if (ligne == 0 && colone == nb_colone-1) nbCasesAdjPleines = tab[0][nb_colone-2] + tab[1][nb_colone-2] + tab[1][nb_colone-1] + tab[nb_ligne-1][nb_colone-1] + tab[nb_ligne-1][nb_colone-2] + tab[0][0] + tab[1][0] + tab[nb_ligne-1][0];											//verif si on est en haut à droite
 				else{
-					if (ligne == nb_ligne-1 && colone == nb_colone-1) nbCasesAdjPleines = tab[0][0] + tab[nb_ligne-1][nb_colone-2] + tab[nb_ligne-2][nb_colone-2] + tab[nb_ligne-2][nb_colone-1] + tab[0][nb_colone-1] + tab[0][nb_ligne-2] + tab[nb_ligne-1][0] + tab[nb_ligne-2][0]; 							
+					if (ligne == nb_ligne-1 && colone == nb_colone-1) nbCasesAdjPleines = tab[0][0] + tab[nb_ligne-1][nb_colone-2] + tab[nb_ligne-2][nb_colone-2] + tab[nb_ligne-2][nb_colone-1] + tab[0][nb_colone-1] + tab[0][nb_ligne-2] + tab[nb_ligne-1][0] + tab[nb_ligne-2][0]; 				//verif si on est en bas à droite
 					else{
-						if (ligne == 0)	nbCasesAdjPleines = tab[nb_ligne-1][colone-1] + tab[ligne][colone-1] + tab[ligne+1][colone-1] + tab[nb_ligne-1][colone] + tab[ligne+1][colone] + tab[nb_ligne-1][colone+1] + tab[ligne][colone+1] + tab[ligne+1][colone+1];														
+						if (ligne == 0)	nbCasesAdjPleines = tab[nb_ligne-1][colone-1] + tab[ligne][colone-1] + tab[ligne+1][colone-1] + tab[nb_ligne-1][colone] + tab[ligne+1][colone] + tab[nb_ligne-1][colone+1] + tab[ligne][colone+1] + tab[ligne+1][colone+1];									//verif si la case est sur la ligne du haut
 						else{
-							if (ligne == nb_ligne-1) nbCasesAdjPleines = tab[ligne-1][colone-1] + tab[ligne][colone-1] + tab[0][colone-1] + tab[ligne-1][colone] + tab[0][colone] + tab[ligne-1][colone+1] + tab[ligne][colone+1] + tab[0][colone+1];													
+							if (ligne == nb_ligne-1) nbCasesAdjPleines = tab[ligne-1][colone-1] + tab[ligne][colone-1] + tab[0][colone-1] + tab[ligne-1][colone] + tab[0][colone] + tab[ligne-1][colone+1] + tab[ligne][colone+1] + tab[0][colone+1];												//verif si la case est sur la ligne du bas
 							else{
-								if (colone == 0) nbCasesAdjPleines = tab[ligne-1][nb_colone-1] + tab[ligne][nb_colone-1] + tab[ligne+1][nb_colone-1] + tab[ligne-1][colone] + tab[ligne+1][colone] + tab[ligne-1][colone+1] + tab[ligne][colone+1] + tab[ligne+1][colone+1];													
+								if (colone == 0) nbCasesAdjPleines = tab[ligne-1][nb_colone-1] + tab[ligne][nb_colone-1] + tab[ligne+1][nb_colone-1] + tab[ligne-1][colone] + tab[ligne+1][colone] + tab[ligne-1][colone+1] + tab[ligne][colone+1] + tab[ligne+1][colone+1];						//verif si la case est sur la colone de gauche
 								else{
-									if (colone == nb_colone-1) nbCasesAdjPleines = tab[ligne-1][colone-1] + tab[ligne][colone-1] + tab[ligne+1][colone-1] + tab[ligne-1][colone] + tab[ligne+1][colone] + tab[ligne-1][0] + tab[ligne][0] + tab[ligne+1][0];										
+									if (colone == nb_colone-1) nbCasesAdjPleines = tab[ligne-1][colone-1] + tab[ligne][colone-1] + tab[ligne+1][colone-1] + tab[ligne-1][colone] + tab[ligne+1][colone] + tab[ligne-1][0] + tab[ligne][0] + tab[ligne+1][0];										//verif si la case est sur la colone de droite
 									else{
-										nbCasesAdjPleines = tab[ligne-1][colone-1] + tab[ligne][colone-1] + tab[ligne+1][colone-1] + tab[ligne-1][colone] + tab[ligne+1][colone] + tab[ligne-1][colone+1] + tab[ligne][colone+1] + tab[ligne+1][colone+1];	//verif pour tout le reste
+										nbCasesAdjPleines = tab[ligne-1][colone-1] + tab[ligne][colone-1] + tab[ligne+1][colone-1] + tab[ligne-1][colone] + tab[ligne+1][colone] + tab[ligne-1][colone+1] + tab[ligne][colone+1] + tab[ligne+1][colone+1];											//verif pour tout le reste
 									}
 								}
 							}
@@ -93,13 +93,13 @@ int verifCasesAdjacentes(int** tab, int nb_ligne, int nb_colone, int ligne, int 
 				else{
 					if (ligne == nb_ligne-1 && colone == nb_colone-1) nbCasesAdjPleines = tab [ligne-1][colone-1] + tab[ligne][colone-1] + tab[ligne-1][colone];																							//verif si on est en bas à droite
 					else{
-						if (ligne == 0) nbCasesAdjPleines =tab[ligne][colone-1] + tab[ligne+1][colone-1]+ tab[ligne+1][colone] + tab[ligne][colone+1] + tab[ligne+1][colone+1];																				//verif si la case est sur la colone du haut
+						if (ligne == 0) nbCasesAdjPleines =tab[ligne][colone-1] + tab[ligne+1][colone-1]+ tab[ligne+1][colone] + tab[ligne][colone+1] + tab[ligne+1][colone+1];																				//verif si la case est sur la ligne du haut
 						else{
-							if (ligne == nb_ligne-1) nbCasesAdjPleines = tab[ligne-1][colone-1] + tab[ligne][colone-1] + tab[ligne-1][colone]+ tab[ligne-1][colone+1] + tab[ligne][colone+1];																//verif si la case est sur la colone du bas
+							if (ligne == nb_ligne-1) nbCasesAdjPleines = tab[ligne-1][colone-1] + tab[ligne][colone-1] + tab[ligne-1][colone]+ tab[ligne-1][colone+1] + tab[ligne][colone+1];																//verif si la case est sur la ligne du bas
 							else{
-								if (colone == 0) nbCasesAdjPleines =tab[ligne-1][colone] + tab[ligne+1][colone] + tab[ligne-1][colone+1] + tab[ligne][colone+1] + tab[ligne+1][colone+1];																	//verif si la case est sur la ligne de gauche
+								if (colone == 0) nbCasesAdjPleines =tab[ligne-1][colone] + tab[ligne+1][colone] + tab[ligne-1][colone+1] + tab[ligne][colone+1] + tab[ligne+1][colone+1];																	//verif si la case est sur la colone de gauche
 								else{
-									if (colone == nb_colone-1) nbCasesAdjPleines = tab[ligne-1][colone-1] + tab[ligne][colone-1] + tab[ligne+1][colone-1] + tab[ligne-1][colone] + tab[ligne+1][colone];													//verif si la case est sur la ligne de droite
+									if (colone == nb_colone-1) nbCasesAdjPleines = tab[ligne-1][colone-1] + tab[ligne][colone-1] + tab[ligne+1][colone-1] + tab[ligne-1][colone] + tab[ligne+1][colone];													//verif si la case est sur la colone de droite
 									else{
 										nbCasesAdjPleines = tab[ligne-1][colone-1] + tab[ligne][colone-1] + tab[ligne+1][colone-1] + tab[ligne-1][colone] + tab[ligne+1][colone] + tab[ligne-1][colone+1] + tab[ligne][colone+1] + tab[ligne+1][colone+1];	//verif pour tout le reste
 									}
@@ -114,7 +114,6 @@ int verifCasesAdjacentes(int** tab, int nb_ligne, int nb_colone, int ligne, int 
 
 	return nbCasesAdjPleines;
 }
-
 
 int nouvellevaleur(int nb_voisin,int valeur_case){
 	if(valeur_case == 0){                       // Si la case est vide au départ
